@@ -1,7 +1,7 @@
 import logging
 import datetime as dt
 
-def set_logger(filename, file_mode='w', log_detail='INFO', conole=False):
+def set_logger(filename, file_mode='w', log_detail='INFO', console=False):
     """
     Basic logging function:
       - Logs to a file
