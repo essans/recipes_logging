@@ -17,7 +17,7 @@ def set_logger(filename, file_mode='w', log_detail='INFO', console=False):
         filename=filename,
         level=level,
         filemode=file_mode,
-        format='%(asctime)s - %(levelname)s - %(message)s',
+        format='%(asctime)s - %(levelname)s - %(name)s - %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S'
     )
 
@@ -47,7 +47,7 @@ def set_ts_logger(filename, log_detail='INFO', console=False):
     logging.basicConfig(
                     filename= f'{filename}_{dt.datetime.now().strftime('%Y%m%d_%H%M%S')}',
                     level=level,
-                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    format='%(asctime)s - %(levelname)s - %(name)s - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
     if console:
