@@ -34,9 +34,12 @@ def set_logger(filename, file_mode='w', log_detail='INFO', console=False, silenc
         logger.addHandler(console_handler)
 
     if silence_third_party:
-        # Silence all third-party loggers (i.e., those not from your script)
         for name in logging.root.manager.loggerDict:
             if not name.startswith('__main__') and not name.startswith('mylogger'):
                 logging.getLogger(name).setLevel(logging.WARNING)
+
+        # Additionally silence known verbose libraries
+        for noisy_logger in ['httpx', 'openai', 'urllib3']:
+            logging.getLogger(noisy_logger).setLevel(logging.WARNING)
 
     return logger
