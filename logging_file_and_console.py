@@ -31,7 +31,7 @@ def set_logger(filename, file_mode='w', log_detail='INFO', console=False):
     return logger
 
 
-def set_ts_logger(filename, log_detail='INFO'): 
+def set_ts_logger(filename, log_detail='INFO', console=False): 
     """
     Basic logging function which outputs to a timestamped file:
       filename: filename string to save in current dir or pass a full '/path/to/filename.log'
